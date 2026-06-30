@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Platforms Guide for Local Businesses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f766e;
+            --primary-light: #14b8a6;
+            --primary-dark: #0d544a;
+            --accent: #f59e0b;
+            --accent-light: #fbbf24;
+            --success: #10b981;
+            --warning: #f97316;
+            --danger: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* CONTROLS */
+        .controls {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--gray-300);
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--gray-200);
+            background: white;
+            padding: 0 2rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .tab-btn {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            top: 2px;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* CARDS GRID */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .platform-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--primary-light);
+        }
+
+        .platform-rank {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .platform-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .platform-url {
+            color: var(--primary-light);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+        }
+
+        .platform-url:hover {
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .badge.competition-low {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge.competition-med {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge.competition-high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge.contact-messaging {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .platform-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .platform-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        .platform-fee {
+            background: var(--gray-50);
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tips-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .tips-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .tips-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* DETAILED VIEW */
+        .detailed-view {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 2rem;
+            display: none;
+        }
+
+        .detailed-view.active {
+            display: block;
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--gray-200);
+            padding-bottom: 1.5rem;
+        }
+
+        .detail-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .close-btn {
+            background: var(--gray-100);
+            border: none;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: var(--gray-200);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .detail-section h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-section p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* RECOMMENDATIONS */
+        .recommendations {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .recommendations h2 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .rec-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .rec-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid var(--accent);
+        }
+
+        .rec-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .rec-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* TABLE VIEW */
+        .table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--gray-50);
+        }
+
+        /* OUTREACH PLAN */
+        .outreach-plan {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin: 3rem 0;
+        }
+
+        .outreach-plan h2 {
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            gap: 1.5rem;
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-item:not(:last-child) .timeline-marker::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 80px;
+            background: var(--primary-light);
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--gray-200);
+            margin-top: 3rem;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal {
+            background: white;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            animation: slideUp 0.3s ease;
+            position: relative;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .modal-header-title {
+            flex: 1;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header-url {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .modal-content {
+            padding: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .modal-section p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-section strong {
+            color: var(--text-primary);
+        }
+
+        .modal-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .modal-stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .modal-btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .modal-btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+        }
+
+        .modal-btn-secondary {
+            background: var(--gray-100);
+            color: var(--text-primary);
+            border: 1px solid var(--gray-300);
+        }
+
+        .modal-btn-secondary:hover {
+            background: var(--gray-200);
+        }
+
+        @media (max-width: 768px) {
+            .modal {
+                width: 95%;
+                max-height: 95vh;
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+
+            .modal-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: unset;
+            }
+
+            .filter-group {
+                width: 100%;
+            }
+
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .platform-stats {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            td, th {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>💼 Freelance Platforms Guide</h1>
+            <p class="subtitle">Compare 12 leading asynchronous platforms for local business services. No mandatory calls — messaging & email only.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- CONTROLS -->
+        <div class="controls">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search platforms by name...">
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Platforms</button>
+                <button class="filter-btn" data-filter="low">Low Competition</button>
+                <button class="filter-btn" data-filter="med">Medium Competition</button>
+                <button class="filter-btn" data-filter="high">High Competition</button>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="grid">Grid View</button>
+            <button class="tab-btn" data-tab="table">Table View</button>
+            <button class="tab-btn" data-tab="recommendations">Top 3 Recommendations</button>
+            <button class="tab-btn" data-tab="outreach">30-Day Plan</button>
+        </div>
+
+        <!-- GRID VIEW -->
+        <div id="grid-tab" class="tab-content active">
+            <div class="platforms-grid" id="platformsGrid"></div>
+        </div>
+
+        <!-- TABLE VIEW -->
+        <div id="table-tab" class="tab-content" style="display: none;">
+            <div class="table-wrapper">
+                <table id="platformsTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Platform</th>
+                            <th>Competition</th>
+                            <th>Avg Project (INR/USD)</th>
+                            <th>Traffic/Users</th>
+                            <th>Commission/Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- RECOMMENDATIONS TAB -->
+        <div id="recommendations-tab" class="tab-content" style="display: none;">
+            <div class="recommendations">
+                <h2>🏆 Top 3 Platforms for 2026</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary); font-size: 1.05rem;">Based on low competition and high local-business demand</p>
+                <div class="rec-cards">
+                    <div class="rec-card">
+                        <h3>#1 Jobbers.io</h3>
+                        <p><strong>Why:</strong> 0% commission attracts freelancers, and substantial traffic (~9M/mo estimate) offers many leads. Perfect for general IT/web clients; focus on emerging markets connects you with cost-sensitive businesses.</p>
+                        <p style="margin-top: 1rem;"><strong>Best For:</strong> IT/web design, startups, emerging markets</p>
+                    </div>
+                    <div class="rec-card">
+                        <h3>#6 Bark.com</h3>
+                        <p><strong>Why:</strong> Strong for local service leads (4.17M visits/month). Clients post needs (e.g., "dentist website"), and professionals email quotes. Quick tailored replies can secure clients with no upfront work.</p>
+                        <p style="margin-top: 1rem;"><strong>Best For:</strong> Local services, dentists, gyms, coaches</p>
+                    </div>
+                    <div class="rec-card">
+                        <h3>#4 Freelancermap</h3>
+                        <p><strong>Why:</strong> Ideal for tech-focused projects (German/European companies). 0% fee model means you keep full earnings. Large developer base with fewer competitors than Upwork/Fiverr.</p>
+                        <p style="margin-top: 1rem;"><strong>Best For:</strong> Tech projects, European clients, IT specialists</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OUTREACH PLAN TAB -->
+        <div id="outreach-tab" class="tab-content" style="display: none;">
+            <div class="outreach-plan">
+                <h2>📅 30-Day Asynchronous Outreach Plan</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Focus exclusively on email/messaging outreach via chosen platforms (no cold calls). Allocate time to profile setup, client research, initial outreach, and follow-ups.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker">1</div>
+                        <div class="timeline-content">
+                            <h4>Days 1–7: Setup & Polish</h4>
+                            <p>Set up and polish profiles on chosen platforms. Highlight local-business case studies and SEO keywords. Prepare 2–3 outreach email templates. Identify target prospects (dentists, gyms, coaching centres) and gather contact details.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">2</div>
+                        <div class="timeline-content">
+                            <h4>Days 8–15: First Outreach</h4>
+                            <p>Send first batch of personalized messages/emails (~20–30 per niche) explaining how you'll boost their client bookings. No calls. Promptly answer any inquiries and be ready to discuss details via message.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">3</div>
+                        <div class="timeline-content">
+                            <h4>Days 16–23: Refine & Round 2</h4>
+                            <p>Analyze initial responses; tweak messaging for clarity and stronger value proposition. Send second batch (~25–30 new contacts) with refined templates based on what worked.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">4</div>
+                        <div class="timeline-content">
+                            <h4>Days 24–30: Follow-up & Closure</h4>
+                            <p>Follow up on all pending leads with gentle reminders. Evaluate which messages got replies and refine templates. Move interested leads to call/meeting scheduling or finalizing project details by month's end.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: var(--gray-50); padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                    <h3 style="color: var(--primary-dark); margin-bottom: 1rem;">Sample Outreach Templates</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;"><strong>Use a professional yet friendly tone, focusing on client outcomes (more patients/members/leads). Personalize each message with the recipient's business name or a relevant detail.</strong></p>
+                    
+                    <div style="background: white; padding: 1.5rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.75rem;">🦷 Dentist Template</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;"><strong>Subject:</strong> Rebuilding [Dentist's Clinic]'s Patient Bookings<br><br><strong>Body:</strong> Hello Dr. [Name], I'm a web developer specialising in dental practices. I noticed your clinic's website and have ideas to attract more patients through improved design and local SEO. A modern responsive site can boost appointment requests. I recently did this for [Example Practice], which saw a 30% increase in leads. I'd love to discuss how we can achieve similar results for [Clinic] via email/message.</p>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 6px; margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.75rem;">💪 Gym Template</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;"><strong>Subject:</strong> Growing [Gym Name] Memberships Online<br><br><strong>Body:</strong> Hi [Owner Name], I build websites for gyms and fitness centres. Your [Gym] looks great, but I see opportunities to get more sign-ups: landing pages, online class scheduling, and local ads. Clients like [Another Gym] saw membership boosts by improving their site's CTAs and booking forms. Can I share ideas by message to help [Gym] fill classes?</p>
+                    </div>
+
+                    <div style="background: white; padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--primary);">
+                        <h4 style="color: var(--primary-dark); margin-bottom: 0.75rem;">📚 Coaching Centre Template</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;"><strong>Subject:</strong> Filling [Coaching Centre] with More Students<br><br><strong>Body:</strong> Hello [Owner Name], I help coaching centres increase enrolments through better websites and online marketing. A refreshed design with clear "Book a trial" prompts and optimized course pages could draw more inquiries. [Another Coaching] doubled enrolment requests after a redesign. I'd be happy to explain how to achieve that growth for [Centre] via this platform's chat. Looking forward to helping you succeed!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="modal-header-title">
+                    <h2 id="modalTitle">Platform Name</h2>
+                    <div class="modal-header-url" id="modalUrl">platform.com</div>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-badges" id="modalBadges"></div>
+
+                <div class="modal-stats-grid" id="modalStats"></div>
+
+                <div class="modal-section">
+                    <h3>About</h3>
+                    <p id="modalClients"></p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Key Details</h3>
+                    <p><strong>Contact:</strong> <span id="modalContact"></span></p>
+                    <p><strong>Traffic/Users:</strong> <span id="modalTraffic"></span></p>
+                    <p><strong>Payment & Security:</strong> <span id="modalPayment"></span></p>
+                    <p><strong>Dispute Resolution:</strong> <span id="modalDispute"></span></p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>💡 Pro Tips</h3>
+                    <p id="modalTips"></p>
+                </div>
+
+                <div class="modal-actions">
+                    <a class="modal-btn modal-btn-primary" id="visitBtn" target="_blank">🌐 Visit Website</a>
+                    <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>📊 Freelance Platforms Guide • Data compiled from official sources and analytics sites (May–June 2026)</p>
+        <p style="margin-top: 1rem;">Built to help freelancers and agencies identify low-competition opportunities in local business services</p>
+    </footer>
+
+    <script>
+        // Platform data
+        const platforms = [
+            {
+                rank: 1,
+                name: "Jobbers.io",
+                url: "jobbers.io",
+                contact: "Messaging (web)",
+                clients: "SMEs, start-ups (IT/design)",
+                competition: "low",
+                avgProject: "Unspecified (free service)",
+                traffic: "~300k+ visits/day, small user base",
+                fee: "Free sign-up; 0% commission",
+                payment: "Direct payments (no escrow); integrated invoicing tools",
+                dispute: "None (dir. freelancer-client deal)",
+                tips: "Emphasize niche skills (0% fee attracts freelancers); respond quickly to leads"
+            },
+            {
+                rank: 2,
+                name: "LocalSolo",
+                url: "localsolo.com",
+                contact: "Messaging (web)",
+                clients: "US/Canada professional services",
+                competition: "low",
+                avgProject: "High-end contracts",
+                traffic: "~28K freelancers (curated talent)",
+                fee: "Free to join; low transaction fees (up to $100/post job)",
+                payment: "Payment via Stripe/PayPal; no formal escrow reported",
+                dispute: "Unspecified (limited community)",
+                tips: "High-spec profile; target specialist local markets (e.g. US, UK); maintain strong portfolio"
+            },
+            {
+                rank: 3,
+                name: "GoLance",
+                url: "golance.com",
+                contact: "In-app chat",
+                clients: "Tech/dev, crypto-savvy firms",
+                competition: "low",
+                avgProject: "Small to mid-size ($100–$1k+)",
+                traffic: "Small traffic (N/A)",
+                fee: "Free join; 7.95% commission (lower than Fiverr)",
+                payment: "Escrow system (crypto supported); standard dispute process",
+                dispute: "Seller protection via arbitration",
+                tips: "Offer crypto payment; emphasize portfolio; bid on lower-fee/high-value projects"
+            },
+            {
+                rank: 4,
+                name: "Freelancermap",
+                url: "freelancermap.com",
+                contact: "Messaging (web)",
+                clients: "IT/tech companies (DACH region)",
+                competition: "med",
+                avgProject: "Varies (likely mid-range)",
+                traffic: "~112K freelancers; Niche IT projects (2,000+ weekly)",
+                fee: "Free profile; 0% commission on projects",
+                payment: "Direct contact; invoices managed by freelancer",
+                dispute: "No escrow; rely on client payment",
+                tips: "Highlight German/European experience; use clear contracts (no platform commission); apply to long-term contracts"
+            },
+            {
+                rank: 5,
+                name: "Freelancer.com",
+                url: "freelancer.com",
+                contact: "In-app chat",
+                clients: "Global businesses",
+                competition: "high",
+                avgProject: "~$220 avg (₹18K)",
+                traffic: "~4.2M visits/3mo; 51M+ registered users",
+                fee: "Free account; project fees (10%-20% commission)",
+                payment: "Secure milestone payments; Paypal/credit card options",
+                dispute: "Formal dispute via site escrow",
+                tips: "Bid competitively; highlight niche expertise; complete verifications to stand out"
+            },
+            {
+                rank: 6,
+                name: "Bark.com",
+                url: "bark.com",
+                contact: "Email-based leads",
+                clients: "Consumers & SMEs (local services)",
+                competition: "med",
+                avgProject: "Varies by service ($30–$500+ lead fee)",
+                traffic: "~4.17M monthly visits (May 2026); ~1,500 UK pros in web design",
+                fee: "Free signup; pay-per-lead model (lead cost ~₹200–₹2,000)",
+                payment: "No commission; payment for lead contact only; keep all fees earned",
+                dispute: "No formal dispute process (lead platform)",
+                tips: "Respond to leads immediately; have a clear proposal; buy only qualified leads for dentist/gym niches"
+            },
+            {
+                rank: 7,
+                name: "PeoplePerHour",
+                url: "peopleperhour.com",
+                contact: "Messaging (web)",
+                clients: "SMEs, UK/Europe startups",
+                competition: "med",
+                avgProject: "£100–£2,000 (web projects)",
+                traffic: "~1.2M visits/3mo; active UK/AUS clients",
+                fee: "Free to join; 20% service fee (0-£250), 7.5% above £250",
+                payment: "In-app escrow; bank transfers; PayPal support",
+                dispute: "Site-mediated dispute resolution",
+                tips: "Localize profile (GBP); use Hourlies & proposals; maintain high response rate"
+            },
+            {
+                rank: 8,
+                name: "Guru",
+                url: "guru.com",
+                contact: "Messaging (web)",
+                clients: "Global professionals",
+                competition: "med",
+                avgProject: "$100–$1,000+",
+                traffic: "~550K visits/3mo; 3M+ users (est.)",
+                fee: "Free; 9%-5% commission tiers; SafePay escrow",
+                payment: "Secure SafePay escrow; multiple payment modes",
+                dispute: "Dispute via SafePay (arbitration)",
+                tips: "Create strong portfolio; use WorkRoom for tracking; bid strategically (less competition)"
+            },
+            {
+                rank: 9,
+                name: "Truelancer",
+                url: "truelancer.com",
+                contact: "Messaging (web)",
+                clients: "India/Asia SMEs",
+                competition: "med",
+                avgProject: "₹1–5K (small projects)",
+                traffic: "~539K visits/3mo; India-focused demand",
+                fee: "Free; 10% commission (3% GST extra)",
+                payment: "Escrow for milestones; auto-release payments",
+                dispute: "Complaints via support (slower)",
+                tips: "Target India-centric jobs (often INR budgets); have competitive rates; leverage Indian languages if needed"
+            },
+            {
+                rank: 10,
+                name: "Sulekha",
+                url: "sulekha.com",
+                contact: "Chat/WhatsApp/Enquire",
+                clients: "Indian local businesses",
+                competition: "high",
+                avgProject: "₹5–50K (websites)",
+                traffic: "~2.6M visits/3mo; ~58K design firms listed",
+                fee: "Basic free listing; lead generation (paid promos)",
+                payment: "Contact via phone/chat; payment off-platform",
+                dispute: "No in-platform dispute (local deal)",
+                tips: "Ensure complete profile; respond quickly to enquiries; leverage Sulekha ads for visibility"
+            },
+            {
+                rank: 11,
+                name: "Upwork",
+                url: "upwork.com",
+                contact: "Messaging + calls",
+                clients: "Enterprise & SMEs (global)",
+                competition: "high",
+                avgProject: "$50–$5,000+",
+                traffic: "~35.7M visits/3mo; ~1.2M active clients",
+                fee: "Free; 5–20% tiered commission; Connects required",
+                payment: "Escrow (milestones); Work Diary monitoring; multiple payouts",
+                dispute: "Full dispute process (30-day money back)",
+                tips: "Keep high JSS rating; write detailed proposals; apply Connects efficiently"
+            },
+            {
+                rank: 12,
+                name: "Fiverr",
+                url: "fiverr.com",
+                contact: "Messaging (web)",
+                clients: "Creative/digital services",
+                competition: "high",
+                avgProject: "$5–$500+ (set by seller)",
+                traffic: "~36.7M visits/3mo; 2.1M active sellers",
+                fee: "Free; 20% flat commission on all gigs",
+                payment: "Buyer funds gig in advance; PayPal/credit payout options",
+                dispute: "Fiverr Resolution Center (limited)",
+                tips: "Use SEO keywords in gig; offer tiered Gig Extras; aim for Level 1+ status for trust"
+            }
+        ];
+
+        let filteredPlatforms = [...platforms];
+        let currentFilter = 'all';
+
+        // Render grid view
+        function renderGrid() {
+            const grid = document.getElementById('platformsGrid');
+            grid.innerHTML = filteredPlatforms.map(p => `
+                <div class="platform-card" onclick="showPlatformModal(${p.rank})">
+                    <div class="platform-rank">#${p.rank}</div>
+                    <div class="platform-name">${p.name}</div>
+                    <a href="https://${p.url}" class="platform-url" target="_blank" onclick="event.stopPropagation();">→ ${p.url}</a>
+                    
+                    <div>
+                        <span class="badge contact-messaging">${p.contact}</span>
+                        <span class="badge competition-${p.competition}">Competition: ${p.competition.toUpperCase()}</span>
+                    </div>
+
+                    <div class="platform-stats">
+                        <div class="stat">
+                            <span class="stat-label">Avg Project</span>
+                            <span class="stat-value">${p.avgProject}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Commission</span>
+                            <span class="stat-value">${p.fee.split(';')[0]}</span>
+                        </div>
+                    </div>
+
+                    <div class="platform-description">${p.clients}</div>
+
+                    <div class="platform-fee">
+                        <strong style="color: var(--primary-dark);">Traffic:</strong> ${p.traffic}
+                    </div>
+
+                    <div class="tips-section">
+                        <div class="tips-title">💡 Pro Tips</div>
+                        <div class="tips-text">${p.tips}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render table view
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = filteredPlatforms.map(p => `
+                <tr>
+                    <td><strong>#${p.rank}</strong></td>
+                    <td><strong>${p.name}</strong></td>
+                    <td><span class="badge competition-${p.competition}">${p.competition}</span></td>
+                    <td>${p.avgProject}</td>
+                    <td>${p.traffic}</td>
+                    <td>${p.fee.split(';')[0]}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Filter platforms
+        function filterPlatforms(filter) {
+            currentFilter = filter;
+            if (filter === 'all') {
+                filteredPlatforms = [...platforms];
+            } else {
+                filteredPlatforms = platforms.filter(p => p.competition === filter);
+            }
+            renderGrid();
+            renderTable();
+        }
+
+        // Search functionality
+        function searchPlatforms(query) {
+            const q = query.toLowerCase();
+            filteredPlatforms = platforms.filter(p =>
+                p.name.toLowerCase().includes(q) ||
+                p.url.toLowerCase().includes(q) ||
+                p.clients.toLowerCase().includes(q)
+            );
+            if (currentFilter !== 'all') {
+                filteredPlatforms = filteredPlatforms.filter(p => p.competition === currentFilter);
+            }
+            renderGrid();
+            renderTable();
+        }
+
+        // Tab switching
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+            document.getElementById(`${tab}-tab`).style.display = 'block';
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', (e) => searchPlatforms(e.target.value));
+
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                filterPlatforms(e.target.dataset.filter);
+            });
+        });
+
+        document.querySelectorAll('[data-tab]').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+                document.getElementById(`${e.target.dataset.tab}-tab`).style.display = 'block';
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+            });
+        });
+
+        // Initial render
+        renderGrid();
+        renderTable();
+
+        // Modal functions
+        function showPlatformModal(rank) {
+            const platform = platforms.find(p => p.rank === rank);
+            if (!platform) return;
+
+            // Set header
+            document.getElementById('modalTitle').textContent = platform.name;
+            document.getElementById('modalUrl').textContent = platform.url;
+            document.getElementById('visitBtn').href = `https://${platform.url}`;
+
+            // Set badges
+            const badgesHTML = `
+                <span class="modal-badge" style="background: #e0e7ff; color: #3730a3;">📨 ${platform.contact}</span>
+                <span class="modal-badge" style="background: ${platform.competition === 'low' ? '#d1fae5' : platform.competition === 'med' ? '#fef3c7' : '#fee2e2'}; color: ${platform.competition === 'low' ? '#065f46' : platform.competition === 'med' ? '#92400e' : '#991b1b'};">
+                    Competition: ${platform.competition.toUpperCase()}
+                </span>
+            `;
+            document.getElementById('modalBadges').innerHTML = badgesHTML;
+
+            // Set stats
+            const statsHTML = `
+                <div class="modal-stat">
+                    <span class="modal-stat-label">Average Project</span>
+                    <span class="modal-stat-value">${platform.avgProject}</span>
+                </div>
+                <div class="modal-stat">
+                    <span class="modal-stat-label">Commission/Fee</span>
+                    <span class="modal-stat-value">${platform.fee.split(';')[0]}</span>
+                </div>
+            `;
+            document.getElementById('modalStats').innerHTML = statsHTML;
+
+            // Set details
+            document.getElementById('modalClients').textContent = platform.clients;
+            document.getElementById('modalContact').textContent = platform.contact;
+            document.getElementById('modalTraffic').textContent = platform.traffic;
+            document.getElementById('modalPayment').textContent = platform.payment;
+            document.getElementById('modalDispute').textContent = platform.dispute;
+            document.getElementById('modalTips').textContent = platform.tips;
+
+            // Show modal
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking overlay background
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
